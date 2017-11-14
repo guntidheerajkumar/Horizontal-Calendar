@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application x:Class="HorizontalCalendar.App" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+	<Application.Resources>
+		<ResourceDictionary>
+			<Color x:Key="MainText">#3F445F</Color>
+			<Color x:Key="SelectedDayText">#00AAD0</Color>
+			<Color x:Key="NonSelectedActiveDaysText">#9698A4</Color>
+			<Color x:Key="InactiveDaysText">#E9E9E9</Color>
+			<Color x:Key="ContentSeparator">#E9E9E9</Color>
+			<Color x:Key="ContentBackground">#FFFFFF</Color>
+			<Color x:Key="DisabledSlidingCalendarDayBackground">#EEF3F3</Color>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

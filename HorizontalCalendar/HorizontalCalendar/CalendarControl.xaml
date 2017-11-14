@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="HorizontalCalendar.Controls.CalendarControl"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ContentView.Content>
+        <StackLayout x:Name="mainStackLayout">
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="55" />
+                    <RowDefinition Height="1" />
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0"
+                             HeightRequest="25"
+                             HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="CenterAndExpand"
+                             Orientation="Horizontal"
+                             Padding="5">
+                    <Picker x:Name="MonthNamePicker"
+                            Title="{Binding MonthName}"
+                            HorizontalOptions="StartAndExpand"
+                            IsVisible="False"
+                            ItemDisplayBinding="{Binding MonthName}"
+                            SelectedIndex="{Binding MonthSelectedIndex}"
+                            TextColor="{StaticResource MainText}" />
+                    <Label x:Name="PickerLabel"
+                           HorizontalOptions="EndAndExpand"
+                           FontSize="13"
+                           IsVisible="{Binding IsCalendarAvailable}"
+                           Text="{Binding MonthName}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Handle_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Picker x:Name="YearPicker"
+                            Title="{Binding .}"
+                            HorizontalOptions="StartAndExpand"
+                            IsVisible="False"
+                            ItemDisplayBinding="{Binding .}"
+                            SelectedIndex="{Binding YearSelectedIndex}"
+                            TextColor="{StaticResource MainText}" />
+                    <Label FontFamily="Helvetica"
+                           FontSize="13"
+                           IsVisible="{Binding IsCalendarAvailable}"
+                           Text="{Binding Year}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Year_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <StackLayout Grid.Row="1"
+                             HeightRequest="1"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="Start"
+                             BackgroundColor="{StaticResource ContentSeparator}"
+                             Opacity="0.7" />
+                <ScrollView x:Name="calendarScrollView"
+                                                 Grid.Row="2"
+                                                 Margin="0,5,0,0"
+                                                 HorizontalOptions="StartAndExpand"
+                                                 VerticalOptions="Start"
+                                                 Orientation="Horizontal" />
+                <StackLayout Grid.Row="3"
+                             HeightRequest="1"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="Start"
+                             BackgroundColor="{StaticResource ContentSeparator}"
+                             Opacity="0.7"
+                             Spacing="0" />
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
